@@ -14,21 +14,9 @@ def index():
     return "Welcome to the Fake Users API"
 
 
-@app.route('/fake-users')
+@app.route('/fake-Books')
 def fake_users():
-    # read query param 'n' for how many to generate (default 5)
-    try:
-        n = int(request.args.get('n', 5))
-    except (TypeError, ValueError):
-        n = 5
-
-    # bound n
-    n = max(1, min(n, 100))
-
-    # support reset flag to clear stored data
-    reset_flag = request.args.get('reset', '').lower() in ('1', 'true', 'yes')
-    if reset_flag:
-        data.clear()
+    n = 20  # Default number of profiles to generate
 
     generated = []
     for _ in range(n):
