@@ -37,10 +37,11 @@ def fake_books():
 
     generated = []
     for _ in range(n):
+        # Use generic providers to avoid missing provider errors
         book = {
             'id': faker.unique.uuid4(),
-            'title': faker.book.title(),
-            'author': faker.book.author(),
+            'title': faker.sentence(nb_words=4).rstrip('.'),
+            'author': faker.name(),
             'genre': faker.random_element(elements=('Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery', 'Romance', 'Horror')),
             'year_published': faker.year(),
             'isbn': faker.isbn13(),
