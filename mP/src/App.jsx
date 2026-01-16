@@ -80,8 +80,8 @@ function App() {
             )
             .map((u, i) => (
               <li key={i} className="user-row">
-                <strong>{u.name}</strong> — {u.email} — {u.company}
-                <div className="small">{u.address}</div>
+                <strong>{u.author}</strong> — {u.title} — {u.genre}
+                <div className="small">{u.year_published} — {u.isbn}</div>
               </li>
             ))}
         </ul>
