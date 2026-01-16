@@ -11,7 +11,7 @@ data = []
 
 @app.route('/')
 def index():
-    return 
+    return "Welcome to the Fake Users API"
 
 
 @app.route('/fake-users')
