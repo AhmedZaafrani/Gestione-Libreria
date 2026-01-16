@@ -58,6 +58,12 @@ def fake_books():
     })
 
 
+@app.route('/fake-users')
+def fake_users_alias():
+    """Alias for /fake-books to keep compatibility with frontend calls to /fake-users."""
+    return fake_books()
+
+
 @app.route('/data')
 def show_data():
     """Return the list of currently stored generated profiles."""
