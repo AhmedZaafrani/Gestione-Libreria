@@ -29,12 +29,11 @@ def fake_users():
     generated = []
     for _ in range(n):
         profile = {
-            'name': faker.name(),
-            'email': faker.email(),
-            'address': faker.address().replace('\n', ', '),
-            'phone_number': faker.phone_number(),
-            'job': faker.job(),
-            'company': faker.company(),
+            'name': faker.book.author() ,
+            'id': faker.unique.uuid4(),
+            'year': faker.date_between(start_date='-30y', end_date='today').year,
+            'title': faker.book.title(),
+            'genre': faker.random_element(elements=('Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery', 'Romance', 'Horror')),
         }
         generated.append(profile)
 
