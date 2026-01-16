@@ -34,19 +34,12 @@ def fake_users():
     for _ in range(n):
         profile = {
             'id': faker.unique.uuid4(),
-            'name': faker.name(),
-            'email': faker.email(),
-            'address': faker.address().replace('\n', ', '),
-            'phone_number': faker.phone_number(),
-            'job': faker.job(),
-            'company': faker.company(),
+            'title': faker.book.title(),
+            'author': faker.book.author(),
+            'genre': faker.random_element(elements=('Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery', 'Romance', 'Horror')),   
+            'year_published': faker.year(),
+            'isbn': faker.isbn13(),
         }
-        # optional ssn
-        try:
-            profile['ssn'] = faker.ssn()
-        except Exception:
-            profile['ssn'] = None
-
         generated.append(profile)
 
     data.extend(generated)
