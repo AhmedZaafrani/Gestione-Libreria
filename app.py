@@ -8,8 +8,7 @@ faker = Faker()
 
 # enable CORS for React frontend
 CORS(app)
-
-# In-memory store for generated profiles
+# In-memory store for generated books
 data = []
 
 @app.route('/')
@@ -17,9 +16,9 @@ def index():
     return "Welcome to the Fake Users API"
 
 
-@app.route('/fake-users')
-def fake_users():
-    """Generate fake user profiles and store them in `data`.
+@app.route('/fake-books')
+def fake_books():
+    """Generate fake books and store them in `data`.
 
     Query params:
       - n: number to generate (default 5, max 100)
@@ -38,21 +37,15 @@ def fake_users():
 
     generated = []
     for _ in range(n):
-        profile = {
+        book = {
             'id': faker.unique.uuid4(),
-            'name': faker.name(),
-            'email': faker.email(),
-            'address': faker.address().replace('\n', ', '),
-            'phone_number': faker.phone_number(),
-            'job': faker.job(),
-            'company': faker.company(),
+            'title': faker.book.title(),
+            'author': faker.book.author(),
+            'genre': faker.random_element(elements=('Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery', 'Romance', 'Horror')),
+            'year_published': faker.year(),
+            'isbn': faker.isbn13(),
         }
-        try:
-            profile['ssn'] = faker.ssn()
-        except Exception:
-            profile['ssn'] = None
-
-        generated.append(profile)
+        generated.append(book)
 
     data.extend(generated)
 
