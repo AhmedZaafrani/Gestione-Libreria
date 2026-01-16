@@ -64,7 +64,7 @@ def search_users():
         return jsonify({'count': 0, 'results': []})
 
     q_lower = q.strip().lower()
-    results = [u for u in data if q_lower in u.get('name', '').lower()]
+    results = [u for u in data if q_lower in u.get('author', '').lower()]
     return jsonify({'count': len(results[:limit]), 'results': results[:limit]})
 
 
