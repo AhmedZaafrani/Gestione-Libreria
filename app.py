@@ -6,9 +6,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 faker = Faker()
 
-# Allow cross-origin requests (from React dev server or other origins)
-CORS(app)
-
 # In-memory store for generated profiles
 data = []
 
