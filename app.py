@@ -6,6 +6,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 faker = Faker()
 
+# enable CORS for React frontend
+CORS(app)
+
 # In-memory store for generated profiles
 data = []
 
@@ -14,20 +17,41 @@ def index():
     return "Welcome to the Fake Users API"
 
 
-@app.route('/fake-Books')
+@app.route('/fake-users')
 def fake_users():
-    n = 20  # Default number of profiles to generate
+    """Generate fake user profiles and store them in `data`.
+
+    Query params:
+      - n: number to generate (default 5, max 100)
+      - reset: if '1' or 'true', clear stored data before generating
+    """
+    try:
+        n = int(request.args.get('n', 5))
+    except (TypeError, ValueError):
+        n = 5
+
+    n = max(1, min(n, 100))
+
+    reset_flag = request.args.get('reset', '').lower() in ('1', 'true', 'yes')
+    if reset_flag:
+        data.clear()
 
     generated = []
     for _ in range(n):
         profile = {
             'id': faker.unique.uuid4(),
-            'title': faker.book.title(),
-            'author': faker.book.author(),
-            'genre': faker.random_element(elements=('Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery', 'Romance', 'Horror')),   
-            'year_published': faker.year(),
-            'isbn': faker.isbn13(),
+            'name': faker.name(),
+            'email': faker.email(),
+            'address': faker.address().replace('\n', ', '),
+            'phone_number': faker.phone_number(),
+            'job': faker.job(),
+            'company': faker.company(),
         }
+        try:
+            profile['ssn'] = faker.ssn()
+        except Exception:
+            profile['ssn'] = None
+
         generated.append(profile)
 
     data.extend(generated)
