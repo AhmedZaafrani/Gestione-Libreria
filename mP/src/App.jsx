@@ -104,7 +104,7 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>📚 Gestione Libreria</h1>
+        <h1>Gestione Libreria</h1>
         <div className="controls">
           <button onClick={() => fetchBooks(5)}>Genera</button>
           <button onClick={loadAll}>Mostra tutti</button>
@@ -122,7 +122,7 @@ function App() {
       {error && <p className="error">Errore: {error}</p>}
 
       <section className="books-section">
-        <h2>📖 Libri: {filtered.length}</h2>
+        <h2>Libri: {filtered.length}</h2>
         <div className="users-grid">
           {filtered.map((b, i) => (
             <div key={b.id || i} className="user-row">
