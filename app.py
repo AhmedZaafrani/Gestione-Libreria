@@ -19,6 +19,12 @@ def gen_books():
     if request.args.get('reset'):
         books.clear()
 
+    if len(books) >= 100:
+        return jsonify({'error': 'Limite massimo di 100 libri raggiunto', 'total_stored': len(books), 'data': books}), 400
+
+    available_space = 100 - len(books)
+    n = min(n, available_space)
+
     new_books = []
     for _ in range(n):
         book = {
@@ -47,6 +53,9 @@ def data():
 
 @app.route('/book', methods=['POST'])
 def add():
+    if len(books) >= 100:
+        return jsonify({'error': 'Limite massimo di 100 libri raggiunto'}), 400
+    
     body = request.get_json() or {}
     book = {
         'id': fake.unique.uuid4(),
