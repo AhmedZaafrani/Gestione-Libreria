@@ -1,9 +1,9 @@
 :root {
-  --bg-dark: #0f1720;
-  --bg-accent: linear-gradient(180deg, #0f1720 0%, #172029 100%);
-  --card: #111216;
+  --bg-dark: #1a1d29;
+  --bg-accent: linear-gradient(180deg, #1a1d29 0%, #242736 100%);
+  --card: #1f2233;
   --muted: #9aa6b2;
-  --accent: #6c7bff;
+  --accent: #6366f1;
   --text-light: #e6eef6;
   --radius: 10px;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
