@@ -103,8 +103,8 @@ button:hover { border-color: rgba(108,123,255,0.35); transform: translateY(-1px)
 
 .users-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
   margin-top: 12px;
   padding: 0;
 }
