@@ -63,7 +63,8 @@
 
 .book-genre {
   color: var(--accent);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
 }
 
 .add-book-form {
