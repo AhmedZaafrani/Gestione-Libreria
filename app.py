@@ -10,7 +10,7 @@ books = []
 
 @app.route('/')
 def index():
-    return "Libreria API"
+    return "📚 Libreria API"
 
 @app.route('/fake-books')
 def gen_books():
