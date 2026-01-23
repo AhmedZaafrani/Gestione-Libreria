@@ -17,8 +17,11 @@ function App() {
     setError(null)
     try {
       const res = await fetch(`${API}/fake-users?n=${n}`)
-      if (!res.ok) throw new Error(res.statusText)
       const data = await res.json()
+      if (!res.ok) {
+        if (data.error) throw new Error(data.error)
+        throw new Error(res.statusText)
+      }
       setBooks(data.data || [])
     } catch (err) {
       setError(err.message)
@@ -52,9 +55,12 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, author, genre })
       })
-      if (!res.ok) throw new Error(res.statusText)
-      const book = await res.json()
-      setBooks(prev => [...prev, book])
+      const data = await res.json()
+      if (!res.ok) {
+        if (data.error) throw new Error(data.error)
+        throw new Error(res.statusText)
+      }
+      setBooks(prev => [...prev, data])
       setTitle('')
       setAuthor('')
       setGenre('')
