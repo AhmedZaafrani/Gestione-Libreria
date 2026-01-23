@@ -2,6 +2,11 @@
 
 Sistema di gestione libreria con Flask backend e React frontend.
 
+## Documentazione
+
+- [Analisi dei Requisiti](ANALISI_REQUISITI.md)
+- [User Stories](USER_STORIES.md)
+
 ## Setup
 
 ### Backend
