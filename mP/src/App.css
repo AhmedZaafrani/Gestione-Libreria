@@ -1,0 +1,82 @@
+.app-header {
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  background: rgba(0,0,0,0.2);
+  color: var(--text-light);
+  flex: 1;
+  max-width: 200px;
+}
+
+.error {
+  color: #ff8b8b;
+}
+
+.books-section h2 {
+  margin-bottom: 1rem;
+}
+
+.book-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.book-header button {
+  background: none;
+  border: none;
+  color: #ff8b8b;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.book-header button:hover {
+  color: #ff5555;
+}
+
+.book-title {
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.book-genre {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.add-book-form {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.add-book-form input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  background: rgba(0,0,0,0.2);
+  color: var(--text-light);
+  min-width: 150px;
+}
