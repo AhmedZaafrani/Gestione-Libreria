@@ -122,7 +122,7 @@ function App() {
       {error && <p className="error">Errore: {error}</p>}
 
       <section className="books-section">
-        <h2>Libri: {filtered.length}</h2>
+        <h2>📖 Libri: {filtered.length}</h2>
         <div className="users-grid">
           {filtered.map((b, i) => (
             <div key={b.id || i} className="user-row">
