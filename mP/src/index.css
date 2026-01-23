@@ -74,7 +74,7 @@ button {
   transition: border-color 0.18s, transform 120ms ease;
 }
 
-button:hover { border-color: rgba(108,123,255,0.35); transform: translateY(-1px); }
+button:hover { border-color: rgba(99,102,241,0.4); transform: translateY(-1px); }
 
 .search-input {
   padding: 0.5rem;
