@@ -104,7 +104,7 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>Gestione Libreria</h1>
+        <h1>📚 Gestione Libreria</h1>
         <div className="controls">
           <button onClick={() => fetchBooks(5)}>Genera</button>
           <button onClick={loadAll}>Mostra tutti</button>
