@@ -35,10 +35,10 @@ body {
   width: 100%;
   max-width: 1000px;
   margin: 2.5rem 1rem;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255,255,255,0.03);
   padding: 1.5rem;
   border-radius: var(--radius);
-  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+  box-shadow: 0 8px 32px rgba(2,6,23,0.7);
 }
 
 .app-header {
