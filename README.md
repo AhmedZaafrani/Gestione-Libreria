@@ -1,4 +1,4 @@
-# Gestione Libreria
+# 📚 Gestione Libreria
 
 Sistema di gestione libreria con Flask backend e React frontend.
 
